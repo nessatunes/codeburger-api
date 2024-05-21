@@ -18,5 +18,3 @@
     - **JWT (JSON Web Tokens):** Autenticação segura dos usuários.
     - **BCrypt:** Hashing de senhas para proteção de dados sensíveis.
 
-### :point_right:Licença
-Este projeto está licenciado sob a licença MIT.
