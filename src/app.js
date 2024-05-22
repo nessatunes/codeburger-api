@@ -5,7 +5,7 @@ import cors from "cors";
 import "./database";
 
 const corsOptions = {
-  origin: 'https://codeburger-interface-chi.vercel.app/',
+  origin: 'https://codeburger-interface-chi.vercel.app',
   credentials: true,
 }
 
