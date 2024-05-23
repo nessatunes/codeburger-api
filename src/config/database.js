@@ -11,7 +11,7 @@ module.exports = {
   password: dbUrl.password,
   database: dbUrl.pathname.split('/')[1],
   define: {
-    timestamps: true, // Corrigido de 'timespamps' para 'timestamps'
+    timestamps: true, 
     underscored: true,
     underscoredAll: true,
   },

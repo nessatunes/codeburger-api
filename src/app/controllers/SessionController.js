@@ -16,17 +16,20 @@ class SessionController {
         .json({ error: "Make sure your password or email are correct" });
     };
 
-    if (!(await schema.isValid(request.body))) userEmailOrPasswordIncorrect();
+    if(!(await schema.isValid(request.body))) 
+      return userEmailOrPasswordIncorrect();   
 
-    const { email, password } = request.body;
+    const { email, password } = request.body;   
 
     const user = await User.findOne({
       where: { email },
     });
 
-    if (!user) userEmailOrPasswordIncorrect();
+    if(!user) 
+      return userEmailOrPasswordIncorrect();
 
-    if (!(await user.checkPassword(password))) userEmailOrPasswordIncorrect();
+    if(!(await user.checkPassword(password)))
+      return userEmailOrPasswordIncorrect();
 
     return response.json({
       id: user.id,
