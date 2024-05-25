@@ -13,6 +13,7 @@ class App {
   constructor() {
     this.app = express();
     this.app.use(cors(corsOptions));
+    this.app.options('*', cors(corsOptions));
     this.middlewares();
     this.routes();
   }
