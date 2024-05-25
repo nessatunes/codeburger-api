@@ -13,7 +13,17 @@ class App {
   constructor() {
     this.app = express();
     this.app.use(cors(corsOptions));
-    this.app.options('*', cors(corsOptions));
+    this.app.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', 'https://codeburger-interface-chi.vercel.app');
+      res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      res.header('Access-Control-Allow-Credentials', 'true');
+      if (req.method === 'OPTIONS') {
+        res.sendStatus(200);
+      } else {
+        next();
+      }
+    });
     this.middlewares();
     this.routes();
   }
@@ -34,4 +44,4 @@ class App {
   }
 }
 
-export default new App().app;
+export default new App().app;

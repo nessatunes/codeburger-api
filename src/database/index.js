@@ -5,7 +5,7 @@ import User from "../app/models/User";
 import Product from "../app/models/Product";
 import Category from "../app/models/Category";
 
-import configDatabase from "../config/database";
+//import configDatabase from "../config/database";
 
 const models = [User, Product, Category];
 
